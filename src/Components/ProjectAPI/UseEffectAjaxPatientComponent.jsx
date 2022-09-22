@@ -3,6 +3,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import { EditPatient } from "./EditPatient";
 import PatientHttpService from "./PatientHttpService";
 import { CreatePatient } from "./CreatePatient";
+import { CreateDoctor } from "./Doctor/CreateDoctor";
 
 const UseEffectAjaxPatientComponent = () => {
   const [employees, setEmps] = useState([]);
@@ -155,7 +156,7 @@ const UseEffectAjaxPatientComponent = () => {
   };
   return (
     <Fragment>
-      <h2>REST API Calls</h2>
+      <h2>Hospital App</h2>
       {/* <input type="text" onChange={(e)=>searchhData(e.target.value)}></input> */}
       <table className="table table-bordered table-striped table-danger">
         <tbody>
@@ -244,6 +245,7 @@ const UseEffectAjaxPatientComponent = () => {
       {pbool && <CreatePatient postData={postData}></CreatePatient>}
     
       {/* {JSON.stringify(employees)} */}
+ 
     </Fragment>
   );
 };

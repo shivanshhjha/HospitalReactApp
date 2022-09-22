@@ -4,6 +4,7 @@ const InputComponent = (props) => {
     const passPatientData = () => {
         // props.editedPatientDataFunc(patientData);
         props.postData(props.patientData);
+        //props.loadData();
       };
   return (
     <div>
@@ -25,7 +26,8 @@ const InputComponent = (props) => {
            
         </>
       ))}
-      <button onClick={passPatientData}>Admit this patient</button>
+      
+      <button onClick={passPatientData}>Add</button>
     </div>
   );
 };
