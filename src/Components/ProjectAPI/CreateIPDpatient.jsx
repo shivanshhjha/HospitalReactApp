@@ -86,6 +86,7 @@ export const CreateIPDPatient = () => {
 
   return (
     <div>
+      <br/>
       <h3>CreateIPDPatient</h3>
       <table className="table table-bordered table-striped table-danger">
         <tbody>

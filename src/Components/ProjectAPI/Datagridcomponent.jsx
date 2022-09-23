@@ -2,11 +2,11 @@ import React from "react";
 
 const DataGridComponent = (props) => {
   return (
-    <table className="table table-bordered table-striped table-danger">
+    <table className="table table-bordered table-info">
       <thead>
         <tr>
           {Object.keys(props.emp).map((header, index) => (
-            <td key={index}>{header}</td>
+            <td key={index}><strong>{header}</strong></td>
           ))}
         </tr>
       </thead>

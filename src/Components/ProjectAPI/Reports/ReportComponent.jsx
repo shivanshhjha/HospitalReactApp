@@ -131,7 +131,7 @@ const ReportComponent = () => {
         Submit
       </button>
       <p>Doctors by Specialization</p>
-      <table className="table table-bordered table-striped table-danger">
+      <table className="table table-bordered table-striped table-info">
         <tbody>
           {" "}
           {resDoc.map((e, index) => (
@@ -161,7 +161,7 @@ const ReportComponent = () => {
         Submit
       </button>
       <p>Doctors by Employee Type</p>
-      <table className="table table-bordered table-striped table-danger">
+      <table className="table table-bordered table-striped table-info">
         <tbody>
           {resDocEmptype.map((e, index) => (
             <tr key={index}>
