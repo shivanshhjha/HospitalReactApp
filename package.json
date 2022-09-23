@@ -14,10 +14,10 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
+
     "react-router-dom": "^6.4.1",
+
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -42,4 +42,5 @@
       "last 1 safari version"
     ]
   }
+}
 }
