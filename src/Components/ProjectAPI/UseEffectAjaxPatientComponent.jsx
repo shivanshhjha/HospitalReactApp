@@ -157,6 +157,7 @@ const UseEffectAjaxPatientComponent = () => {
   return (
     <Fragment>
       <h2>Hospital App</h2>
+      <h3>Patient</h3>
       {/* <input type="text" onChange={(e)=>searchhData(e.target.value)}></input> */}
       <table className="table table-bordered table-striped table-danger">
         <tbody>
@@ -179,18 +180,18 @@ const UseEffectAjaxPatientComponent = () => {
                 Put
               </button>
             </td> */}
-            <td>
+            {/* <td>
               <button className="btn btn-danger" onClick={deleteData}>
                 Delete
               </button>
-            </td>
+            </td> */}
           </tr>
         </tbody>
       </table>
       <br />
       <strong>{statusMessage}</strong>
       <br />
-      <table className="table table-bordered table-striped table-danger">
+      <table className="table table-bordered  table-info">
         <thead>
           <tr>
             <th>Patient Id</th>
@@ -229,7 +230,9 @@ const UseEffectAjaxPatientComponent = () => {
               >
                 <strong className="text-dark">Delete Row</strong>
               </button>
-              <button onClick={() => funcBool(e)}>Edit</button>
+              <button onClick={() => funcBool(e)}className="btn btn-primary btn-success"
+              >
+                <strong className="text-dark">Edit</strong></button>
             </tr>
           ))}
         </tbody>
@@ -242,6 +245,7 @@ const UseEffectAjaxPatientComponent = () => {
           editedPatientDataa={editedPatientData}
         ></EditPatient>
       )}
+      <br/>
       {pbool && <CreatePatient postData={postData}></CreatePatient>}
     
       {/* {JSON.stringify(employees)} */}

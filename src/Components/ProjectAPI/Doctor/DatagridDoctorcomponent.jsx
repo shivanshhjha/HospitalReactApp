@@ -23,11 +23,11 @@ const DataGridDoctorComponent = (props) => {
   };
   return (
     <div>
-    <table className="table table-bordered table-striped table-danger">
+    <table className="table table-bordered  table-info">
       <thead>
         <tr>
           {Object.keys(props.emp).map((header, index) => (
-            <td key={index}>{header}</td>
+            <td key={index}><strong>{header}</strong></td>
           ))}
         </tr>
       </thead>
@@ -44,7 +44,9 @@ const DataGridDoctorComponent = (props) => {
               >
                 <strong className="text-dark">Delete Row</strong>
               </button>
-              <button onClick={() => funcBool(e)}>Edit</button>
+              <button onClick={() => funcBool(e)}className="btn btn-primary btn-success"
+              >
+                <strong className="text-dark">Edit</strong></button>
           </tr>
         ))}
       </tbody>

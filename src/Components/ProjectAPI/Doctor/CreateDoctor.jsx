@@ -73,7 +73,7 @@ export const CreateDoctor = (props) => {
   return (
     <div>
         <hr/>
-      <h3>CreateDoctor</h3>
+      <h3>Doctor</h3>
       <table className="table table-bordered table-striped table-danger">
         <tbody>
           <tr>
@@ -83,11 +83,11 @@ export const CreateDoctor = (props) => {
               </button>
             </td>
             <td>
-              <button className="btn btn-warning" onClick={postFunc}>
+              <button className="btn btn-success" onClick={postFunc}>
                 Post
               </button>
             </td>
-            <td>
+            {/* <td>
               <button className="btn btn-warning" onClick={putData}>
                 Put
               </button>
@@ -96,7 +96,7 @@ export const CreateDoctor = (props) => {
               <button className="btn btn-danger" onClick={deleteData}>
                 Delete
               </button>
-            </td>
+            </td> */}
           </tr>
         </tbody>
       </table>

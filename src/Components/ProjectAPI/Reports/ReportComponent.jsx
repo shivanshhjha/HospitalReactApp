@@ -82,7 +82,7 @@ const ReportComponent = () => {
   };
 
   const postListPatperDocData = (e) => {
-      setBool(true);
+    setBool(true);
     serv
       .postListPatperDocData(e)
       .then((response) => {
@@ -97,29 +97,33 @@ const ReportComponent = () => {
     //loadData();
   };
   return (
-    <div className="container">
+    <div className=" container ">
+      <hr />
       <h3>Reports</h3>
+
       <input
         placeholder="Enter Month no:"
         type="number"
         onChange={(e) => setObjMonth({ id: e.target.value, monthname: "" })}
       ></input>
+      <br />
+      <br />
       <button className="btn btn-primary" onClick={() => postData(objMonth)}>
         Submit
       </button>
       <p>Collection per month</p>
       <h2>{res}</h2>
       <strong>{statusCollMessage}</strong>
-      <br />
-
       <hr />
-{/* ...............................................Specialization..................... */}
+      {/* ...............................................Specialization..................... */}
       <input
         placeholder="Enter Specialization"
         onChange={(e) =>
           setObjDoc({ ...objDoc, specialization: e.target.value })
         }
       ></input>
+      <br />
+      <br />
       <button
         className="btn btn-primary"
         onClick={() => postListDocSpecData(objDoc)}
@@ -128,24 +132,28 @@ const ReportComponent = () => {
       </button>
       <p>Doctors by Specialization</p>
       <table className="table table-bordered table-striped table-danger">
-        {resDoc.map((e, index) => (
-          <tr key={index}>
-            {Object.keys(objDoc).map((header, index) => (
-              <td key={index}>{String(e[header])}</td>
-            ))}
-          </tr>
-        ))}
+        <tbody>
+          {" "}
+          {resDoc.map((e, index) => (
+            <tr key={index}>
+              {Object.keys(objDoc).map((header, index) => (
+                <td key={index}>{String(e[header])}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
       </table>
       <strong>{statusDocMessage}</strong>
-
       <hr />
-{/* ...............................................EMP type..................... */}
+      {/* ...............................................EMP type..................... */}
       <input
         placeholder="Enter Employee Type"
         onChange={(e) =>
           setObjDocEmptype({ ...objDocEmptype, emp_Type: e.target.value })
         }
       ></input>
+      <br />
+      <br />
       <button
         className="btn btn-primary"
         onClick={() => postListDocEmptypeData(objDocEmptype)}
@@ -154,24 +162,27 @@ const ReportComponent = () => {
       </button>
       <p>Doctors by Employee Type</p>
       <table className="table table-bordered table-striped table-danger">
-        {resDocEmptype.map((e, index) => (
-          <tr key={index}>
-            {Object.keys(objDocEmptype).map((header, index) => (
-              <td key={index}>{String(e[header])}</td>
-            ))}
-          </tr>
-        ))}
+        <tbody>
+          {resDocEmptype.map((e, index) => (
+            <tr key={index}>
+              {Object.keys(objDocEmptype).map((header, index) => (
+                <td key={index}>{String(e[header])}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
       </table>
       <strong>{statusEmptypeMessage}</strong>
-
       <hr />
-{/* ...............................................Patient Per Doc..................... */}
+      {/* ...............................................Patient Per Doc..................... */}
       <input
         placeholder="Enter Doctor Id"
         onChange={(e) =>
           setObjDocPatperDoc({ ...objDocPatperDoc, doctor_Id: e.target.value })
         }
       ></input>
+      <br />
+      <br />
       <button
         className="btn btn-primary"
         onClick={() => postListPatperDocData(objDocPatperDoc)}
@@ -179,43 +190,44 @@ const ReportComponent = () => {
         Submit
       </button>
       <p>Patients under this Doctor</p>
-      {bool && <table className="table table-bordered table-striped table-danger">
-        <thead>
-          <tr>
-            <th>Patient Id</th>
-            <th>Address Id</th>
-            <th>First Name</th>
-            <th>Middle Name</th>
-            <th>Last Name</th>
-            <th>Mobile No</th>
-            <th>Email</th>
-            <th>Gender</th>
-            <th>Age Type</th>
-            <th>Total Fee</th>
-            <th>Doctor Id</th>
-            <th>IsAdmitted</th>
-          </tr>
-        </thead>
-        <tbody>
-          {resPatperDoc.map((e, index) => (
-            <tr key={index}>
-              <td>{e.patient_Id}</td>
-              <td>{e.address_Id}</td>
-              <td>{e.first_Name}</td>
-              <td>{e.middle_Name}</td>
-              <td>{e.last_Name}</td>
-              <td>{e.mobile_No}</td>
-              <td>{e.email}</td>
-              <td>{e.gender}</td>
-              <td>{e.age_Type}</td>
-              <td>{e.totalFee}</td>
-              <td>{e.doctor_Id}</td>
-              <td>{e.isAdmitted}</td>
-            
+      {bool && (
+        <table className="table table-bordered  table-info">
+          <thead>
+            <tr>
+              <th>Patient Id</th>
+              <th>Address Id</th>
+              <th>First Name</th>
+              <th>Middle Name</th>
+              <th>Last Name</th>
+              <th>Mobile No</th>
+              <th>Email</th>
+              <th>Gender</th>
+              <th>Age Type</th>
+              <th>Total Fee</th>
+              <th>Doctor Id</th>
+              <th>IsAdmitted</th>
             </tr>
-          ))}
-        </tbody>
-      </table>}
+          </thead>
+          <tbody>
+            {resPatperDoc.map((e, index) => (
+              <tr key={index}>
+                <td>{e.patient_Id}</td>
+                <td>{e.address_Id}</td>
+                <td>{e.first_Name}</td>
+                <td>{e.middle_Name}</td>
+                <td>{e.last_Name}</td>
+                <td>{e.mobile_No}</td>
+                <td>{e.email}</td>
+                <td>{e.gender}</td>
+                <td>{e.age_Type}</td>
+                <td>{e.totalFee}</td>
+                <td>{e.doctor_Id}</td>
+                <td>{e.isAdmitted}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
       <strong>{statusPatperDocMessage}</strong>
     </div>
   );

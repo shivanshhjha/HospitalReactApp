@@ -1,20 +1,22 @@
 import React from "react";
 
 const InputComponent = (props) => {
-    const passPatientData = () => {
-        // props.editedPatientDataFunc(patientData);
-        props.postData(props.patientData);
-        //props.loadData();
-      };
+  const passPatientData = () => {
+    // props.editedPatientDataFunc(patientData);
+    props.postData(props.patientData);
+    //props.loadData();
+  };
   return (
     <div>
-      
       {Object.keys(props.patientData).map((header, index) => (
         <>
-          <label>{header}</label> &nbsp;&nbsp;
+          <strong>
+            <label>{header}:</label>{" "}
+          </strong>{" "}
+          &nbsp;
           <input
+          placeholder={header}
             key={index}
-           
             onChange={(e) =>
               props.setPatientData({
                 ...props.patientData,
@@ -22,12 +24,13 @@ const InputComponent = (props) => {
               })
             }
           ></input>
-          <br/>
-           
+          <br />
         </>
       ))}
-      
-      <button onClick={passPatientData}>Add</button>
+      <br />
+      <button onClick={passPatientData} className="btn btn-primary btn-warning">
+        Add
+      </button>
     </div>
   );
 };

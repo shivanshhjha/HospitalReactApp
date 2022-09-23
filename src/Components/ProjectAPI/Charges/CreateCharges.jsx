@@ -79,7 +79,7 @@ export const CreateCharges = (props) => {
   return (
     <div>
         <hr/>
-      <h3>CreateCharges</h3>
+      <h3>Charges</h3>
       <table className="table table-bordered table-striped table-danger">
         <tbody>
           <tr>
@@ -89,11 +89,11 @@ export const CreateCharges = (props) => {
               </button>
             </td>
             <td>
-              <button className="btn btn-warning" onClick={postFunc}>
+              <button className="btn btn-success" onClick={postFunc}>
                 Post
               </button>
             </td>
-            <td>
+            {/* <td>
               <button className="btn btn-warning" onClick={putData}>
                 Put
               </button>
@@ -102,7 +102,7 @@ export const CreateCharges = (props) => {
               <button className="btn btn-danger" onClick={deleteData}>
                 Delete
               </button>
-            </td>
+            </td> */}
           </tr>
         </tbody>
       </table>

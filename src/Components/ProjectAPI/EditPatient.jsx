@@ -11,15 +11,15 @@ export const EditPatient = (props) => {
     TotalFee: 0,
     Doctor_Id: 0,
     IsAdmitted: 0,
-    Address:{
-        address_Id: 0,
-        house_No: 0,
-        society: "a",
-        area: "a",
-        city: "a",
-        state: "a",
-        dob: "2022-09-18 00:00:00.000"
-    }
+    Address: {
+      address_Id: 0,
+      house_No: 0,
+      society: "a",
+      area: "a",
+      city: "a",
+      state: "a",
+      dob: "2022-09-18 00:00:00.000",
+    },
   });
   // console.log(patientData);
   useEffect(() => {
@@ -28,74 +28,90 @@ export const EditPatient = (props) => {
 
   const passEditPatientData = () => {
     props.editedPatientDataFunc(patientData);
-    props.putData(props.passId,patientData);
+    props.putData(props.passId, patientData);
   };
 
   return (
     <div>
       <h3>EditPatient</h3>
+      <strong> <label >Firstname: </label></strong> &nbsp;
       <input
         value={patientData.first_Name}
         onChange={(e) =>
           setPatientData({ ...patientData, first_Name: e.target.value })
         }
-      ></input>
+      ></input> <br/>
+      <strong><label >Middlename: </label></strong>&nbsp;
       <input
         onChange={(e) =>
           setPatientData({ ...patientData, middle_Name: e.target.value })
         }
         value={patientData.middle_Name}
-      ></input>
+      ></input><br/>
+      <strong> <label >Lastname: </label></strong>&nbsp;
       <input
         onChange={(e) =>
           setPatientData({ ...patientData, last_Name: e.target.value })
         }
         value={patientData.last_Name}
-      ></input>
+      ></input><br/>
+      <strong> <label >Mobile No: </label></strong>&nbsp;
       <input
         onChange={(e) =>
           setPatientData({ ...patientData, mobile_No: e.target.value })
         }
         value={patientData.mobile_No}
-      ></input>
+      ></input><br/>
+      <strong><label >Email: </label></strong>&nbsp;
       <input
         onChange={(e) =>
           setPatientData({ ...patientData, email: e.target.value })
         }
         value={patientData.email}
-      ></input>
+      ></input><br/>
+      <strong> <label >Gender: </label></strong>&nbsp;
       <input
         onChange={(e) =>
           setPatientData({ ...patientData, gender: e.target.value })
         }
         value={patientData.gender}
-      ></input>
+      ></input><br/>
+      <strong> <label >Age Ttpe: </label></strong>&nbsp;
       <input
         onChange={(e) =>
           setPatientData({ ...patientData, age_Type: e.target.value })
         }
         value={patientData.age_Type}
-      ></input>
+      ></input><br/>
+      <strong> <label >Total Fee: </label></strong>&nbsp;
       <input
         onChange={(e) =>
           setPatientData({ ...patientData, totalFee: e.target.value })
         }
         value={patientData.totalFee}
-      ></input>
+      ></input><br/>
+     <strong> <label >Doctor Id: </label></strong>&nbsp;
       <input
         onChange={(e) =>
           setPatientData({ ...patientData, doctor_Id: e.target.value })
         }
         value={patientData.doctor_Id}
-      ></input>
+      ></input><br/>
+     <strong> <label >Is Admitted?: </label></strong>&nbsp;
       <input
         onChange={(e) =>
           setPatientData({ ...patientData, isAdmitted: e.target.value })
         }
         value={patientData.isAdmitted}
-      ></input>
-
-      <button onClick={passEditPatientData}>Change</button>
+      ></input><br/>
+  <br/>
+      <button
+        onClick={passEditPatientData}
+        className="btn btn-primary btn-success"
+      >
+       Change
+      </button>
+    
     </div>
   );
 };
