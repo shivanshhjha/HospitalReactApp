@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReportsHttpService from "./ReportsHttpService";
+//Report component
 const ReportComponent = () => {
   const [res, setRes] = useState(0);
   const [resDoc, setResDoc] = useState([]);
